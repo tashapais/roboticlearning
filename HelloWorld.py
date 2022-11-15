@@ -1,5 +1,6 @@
 from ai2thor.controller import Controller
 from pprint import pprint 
+
 controller = Controller(
     agentMode="default",
     visibilityDistance=1.5,
@@ -19,6 +20,7 @@ controller = Controller(
     height=1000,
     fieldOfView=90
 )
+'''
 controller.step(
     action='SetObjectPoses',
     objectPoses=[{
@@ -29,11 +31,16 @@ controller.step(
             "z": 0
         },
         "position":{
-            "y":"1.401",
-            "x":"1.872",
+            "x":"1.401",
+            "y":"1.872",
             "z":"-1.26"
         }
-    },
+    }
+    ]
+)
+'''
+
+''',
     {
         "objectName":"Ladle_7069fa47",
         "rotation": {
@@ -59,9 +66,7 @@ controller.step(
             "x":"1.870",
             "z":"-1.26"
         }
-    }
-    ]
-)
+    }'''
 
 
 for obj in controller.last_event.metadata["objects"]:
