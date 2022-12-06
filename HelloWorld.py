@@ -34,32 +34,13 @@ while True :
     controller.step("Done")
     choice= input()
 
+    for obj in controller.last_event.metadata["objects"]:
+        print(obj["name"])
+
+
+
     if choice == "w":
         event= controller.step("MoveAhead")
-
-        # focal_length = (width / 2) / np.tan((np.pi * fov_w / 180) / 2)
-        
-        # cam_intr = np.array([[focal_length, 0, height / 2], [0, focal_length, width / 2], [0, 0, 1]])
-        
-        # cam_pose = affines.compose(
-        #     T=list(event.metadata["agent"]["position"].values()),
-        #     R=euler.euler2mat(
-        #         list(event.metadata["agent"]["rotation"].values())[2] * np.pi / 180,
-        #         list(event.metadata["agent"]["rotation"].values())[1] * np.pi / 180,
-        #         list(event.metadata["agent"]["rotation"].values())[0] * np.pi / 180,
-        #     ),
-        #     Z=np.ones(3))
-
-        # img1 = Image.fromarray(event.frame)    
-        # data = {"depth": event.depth_frame,
-        #         "cam_intr":cam_intr,
-        #         "cam_pose":cam_pose,
-        #         "image":img1}
-        
-        # output = open('assets/data.pkl','wb')
-        # pickle.dump(data,output)
-        # output.close()
-
     if choice == "s":
         event= controller.step("MoveBack")
     if choice == "a":
@@ -100,7 +81,7 @@ while True :
                 }
             },
             {
-                "objectName": "Apple_5ad013bf",
+                "objectName": "Fork_29878d10",
                 "rotation": {
                     "x": 0,
                     "y": 0,
